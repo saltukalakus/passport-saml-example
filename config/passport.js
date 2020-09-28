@@ -15,16 +15,16 @@ module.exports = function (passport, config) {
       path: config.passport.saml.path,
       entryPoint: config.passport.saml.entryPoint,
       issuer: config.passport.saml.issuer,
-      cert: config.passport.saml.cert
+      cert: config.passport.saml.cert,
+      forceAuthn: true
     },
     function (profile, done) {
+      console.log(profile);
       return done(null,
         {
-          id: profile.uid,
-          email: profile.email,
-          displayName: profile.cn,
-          firstName: profile.givenName,
-          lastName: profile.sn
+          id: profile[config.mapping.id],
+          email: profile[config.mapping.email],
+          displayName: profile[config.mapping.displayName]
         });
     })
   );
