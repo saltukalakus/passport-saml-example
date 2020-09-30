@@ -39,7 +39,7 @@ OZsMYZj2etVQi0U8vz4T1rfc8g==
 -----END CERTIFICATE-----`;
 
 
-const saltukSaml = "https://saltuk-demo.auth0.com/samlp/WOVVA05PbWSk4xHUBZ2IXI9s1I6nN6cy"
+const saltukSaml = "https://saltuk-demo.auth0.com/samlp/WOVVA05PbWSk4xHUBZ2IXI9s1I6nN6cy?connection=Auth0Enterprise"
 const tanverSaml = "https://tanver-custom.eu.auth0.com/samlp/D7moGi1FQRfRwfTK2ra2KSA1ObLSzPJ7?connection=tanverhasannomanoutlook-waad";
 
 module.exports = {
@@ -52,9 +52,9 @@ module.exports = {
       strategy: 'saml',
       saml: {
         path: process.env.SAML_PATH || '/login/callback',
-        entryPoint: process.env.SAML_ENTRY_POINT || tanverSaml,
+        entryPoint: process.env.SAML_ENTRY_POINT || saltukSaml,
         issuer: 'passport-saml',
-        cert: process.env.SAML_CERT || tanverCert
+        cert: process.env.SAML_CERT || saltukCert
       }
     },
     mapping: {
