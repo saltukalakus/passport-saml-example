@@ -36,7 +36,7 @@
     "morgan": "1.10.0",
     "nodemon": "2.0.4",
     "passport": "0.4.1",
-    "passport-saml": "file:../passport-saml"
+    "passport-saml": "^2.0.2"
   },
   "devDependencies": {
     "bower": "1.7.9"
